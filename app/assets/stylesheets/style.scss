@@ -1,0 +1,69 @@
+
+body{
+  font-family: 'Roboto Slab', serif;
+}
+
+
+/* Navbar */
+
+.navbar{
+  padding: 0px 0;
+}
+
+.navbar a{
+  text-decoration: none;
+  color: #fff;
+  padding-bottom: 2px;
+}
+
+.link-custom:hover{
+  content: '';
+  width: 0;
+  border-bottom: 2px solid #78f982;
+  transition: width .5s;
+}
+
+
+
+
+/* Dropdown */
+
+.dropdown-menu h4{
+  font-size: 16px;
+}
+
+.dropdown-menu ul li {
+  font-size: 12px;
+}
+
+.dropdown-menu{
+  margin-top: 10px;
+  border: 5px solid #e0e0e0;
+  border-radius: 10px 10px 10px 10px;
+  height: 80vh;
+}
+
+.large-box h3{
+  margin-top: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 2px solid #000;
+}
+
+
+/* Sub Menu */
+
+.navbar .img-icons{
+  width: 25px;
+  height: 25px;
+  margin-bottom: 8px;
+  margin-left: 4px;
+}
+
+.large-box .img-box{
+  border-top: 5px solid #000;
+}
+
+.custom{
+  margin-top:px;
+}
