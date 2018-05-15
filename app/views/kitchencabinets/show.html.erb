@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @kitchencabinet.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @kitchencabinet.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @kitchencabinet.price %>
+</p>
+
+<%= link_to 'Edit', edit_kitchencabinet_path(@kitchencabinet) %> |
+<%= link_to 'Back', kitchencabinets_path %>

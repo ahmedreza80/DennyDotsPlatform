@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sidets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sidets.each do |sidet| %>
+      <tr>
+        <td><%= sidet.title %></td>
+        <td><%= sidet.description %></td>
+        <td><%= sidet.price %></td>
+        <td><%= link_to 'Show', sidet %></td>
+        <td><%= link_to 'Edit', edit_sidet_path(sidet) %></td>
+        <td><%= link_to 'Destroy', sidet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sidet', new_sidet_path %>

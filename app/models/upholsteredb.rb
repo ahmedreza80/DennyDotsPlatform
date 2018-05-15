@@ -1,0 +1,2 @@
+class Upholsteredb < ApplicationRecord
+end

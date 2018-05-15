@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @divanb.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @divanb.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @divanb.price %>
+</p>
+
+<%= link_to 'Edit', edit_divanb_path(@divanb) %> |
+<%= link_to 'Back', divanbs_path %>

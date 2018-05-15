@@ -1,0 +1,2 @@
+class Twoseatersofa < ApplicationRecord
+end

@@ -1,0 +1,32 @@
+<%= form_with(model: kingsizeb, local: true) do |form| %>
+  <% if kingsizeb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kingsizeb.errors.count, "error") %> prohibited this kingsizeb from being saved:</h2>
+
+      <ul>
+      <% kingsizeb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :kingsizeb_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :kingsizeb_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :kingsizeb_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

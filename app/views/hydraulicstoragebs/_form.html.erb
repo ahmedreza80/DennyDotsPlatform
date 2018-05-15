@@ -1,0 +1,32 @@
+<%= form_with(model: hydraulicstorageb, local: true) do |form| %>
+  <% if hydraulicstorageb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hydraulicstorageb.errors.count, "error") %> prohibited this hydraulicstorageb from being saved:</h2>
+
+      <ul>
+      <% hydraulicstorageb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :hydraulicstorageb_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :hydraulicstorageb_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :hydraulicstorageb_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class Besidet < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class Hydraulicstorageb < ApplicationRecord
+end

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Divanbs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @divanbs.each do |divanb| %>
+      <tr>
+        <td><%= divanb.title %></td>
+        <td><%= divanb.description %></td>
+        <td><%= divanb.price %></td>
+        <td><%= link_to 'Show', divanb %></td>
+        <td><%= link_to 'Edit', edit_divanb_path(divanb) %></td>
+        <td><%= link_to 'Destroy', divanb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Divanb', new_divanb_path %>

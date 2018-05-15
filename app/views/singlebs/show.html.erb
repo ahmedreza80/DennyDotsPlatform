@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @singleb.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @singleb.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @singleb.price %>
+</p>
+
+<%= link_to 'Edit', edit_singleb_path(@singleb) %> |
+<%= link_to 'Back', singlebs_path %>

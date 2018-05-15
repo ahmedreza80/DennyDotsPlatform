@@ -1,0 +1,2 @@
+class Diningbench < ApplicationRecord
+end

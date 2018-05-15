@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @diningbench.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @diningbench.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @diningbench.price %>
+</p>
+
+<%= link_to 'Edit', edit_diningbench_path(@diningbench) %> |
+<%= link_to 'Back', diningbenches_path %>

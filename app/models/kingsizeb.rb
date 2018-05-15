@@ -1,0 +1,2 @@
+class Kingsizeb < ApplicationRecord
+end

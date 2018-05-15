@@ -1,0 +1,32 @@
+<%= form_with(model: bench, local: true) do |form| %>
+  <% if bench.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bench.errors.count, "error") %> prohibited this bench from being saved:</h2>
+
+      <ul>
+      <% bench.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :bench_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :bench_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :bench_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

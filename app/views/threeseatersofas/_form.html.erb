@@ -1,0 +1,32 @@
+<%= form_with(model: threeseatersofa, local: true) do |form| %>
+  <% if threeseatersofa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(threeseatersofa.errors.count, "error") %> prohibited this threeseatersofa from being saved:</h2>
+
+      <ul>
+      <% threeseatersofa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :threeseatersofa_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :threeseatersofa_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :threeseatersofa_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

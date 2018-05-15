@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @besidet.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @besidet.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @besidet.price %>
+</p>
+
+<%= link_to 'Edit', edit_besidet_path(@besidet) %> |
+<%= link_to 'Back', besidets_path %>

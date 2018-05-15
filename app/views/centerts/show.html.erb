@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @centert.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @centert.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @centert.price %>
+</p>
+
+<%= link_to 'Edit', edit_centert_path(@centert) %> |
+<%= link_to 'Back', centerts_path %>

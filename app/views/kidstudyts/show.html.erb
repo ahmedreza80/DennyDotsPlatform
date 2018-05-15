@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @kidstudyt.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @kidstudyt.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @kidstudyt.price %>
+</p>
+
+<%= link_to 'Edit', edit_kidstudyt_path(@kidstudyt) %> |
+<%= link_to 'Back', kidstudyts_path %>

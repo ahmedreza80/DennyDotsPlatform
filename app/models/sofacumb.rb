@@ -1,0 +1,2 @@
+class Sofacumb < ApplicationRecord
+end

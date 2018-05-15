@@ -1,0 +1,32 @@
+<%= form_with(model: queensizeb, local: true) do |form| %>
+  <% if queensizeb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(queensizeb.errors.count, "error") %> prohibited this queensizeb from being saved:</h2>
+
+      <ul>
+      <% queensizeb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :queensizeb_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :queensizeb_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :queensizeb_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

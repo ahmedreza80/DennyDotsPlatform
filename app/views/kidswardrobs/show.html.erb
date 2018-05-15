@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @kidswardrob.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @kidswardrob.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @kidswardrob.price %>
+</p>
+
+<%= link_to 'Edit', edit_kidswardrob_path(@kidswardrob) %> |
+<%= link_to 'Back', kidswardrobs_path %>

@@ -1,0 +1,2 @@
+class Tvcabinet < ApplicationRecord
+end

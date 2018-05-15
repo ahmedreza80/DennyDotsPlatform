@@ -1,0 +1,32 @@
+<%= form_with(model: divanb, local: true) do |form| %>
+  <% if divanb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(divanb.errors.count, "error") %> prohibited this divanb from being saved:</h2>
+
+      <ul>
+      <% divanb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :divanb_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :divanb_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :divanb_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

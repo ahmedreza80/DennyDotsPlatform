@@ -1,0 +1,2 @@
+class Fabricsofaset < ApplicationRecord
+end

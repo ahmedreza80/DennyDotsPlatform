@@ -1,0 +1,2 @@
+class Divanb < ApplicationRecord
+end

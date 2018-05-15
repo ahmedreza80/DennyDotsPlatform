@@ -1,0 +1,2 @@
+class Diningt < ApplicationRecord
+end

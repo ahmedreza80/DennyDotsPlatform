@@ -1,0 +1,32 @@
+<%= form_with(model: fabricsofaset, local: true) do |form| %>
+  <% if fabricsofaset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fabricsofaset.errors.count, "error") %> prohibited this fabricsofaset from being saved:</h2>
+
+      <ul>
+      <% fabricsofaset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :fabricsofaset_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :fabricsofaset_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :fabricsofaset_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

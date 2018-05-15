@@ -1,0 +1,32 @@
+<%= form_with(model: bookcabinet, local: true) do |form| %>
+  <% if bookcabinet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bookcabinet.errors.count, "error") %> prohibited this bookcabinet from being saved:</h2>
+
+      <ul>
+      <% bookcabinet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :bookcabinet_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :bookcabinet_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :bookcabinet_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

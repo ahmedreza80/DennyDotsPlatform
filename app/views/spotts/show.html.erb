@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @spott.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @spott.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @spott.price %>
+</p>
+
+<%= link_to 'Edit', edit_spott_path(@spott) %> |
+<%= link_to 'Back', spotts_path %>

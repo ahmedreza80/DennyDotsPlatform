@@ -1,0 +1,2 @@
+class Lshapedcornersofa < ApplicationRecord
+end

@@ -1,0 +1,32 @@
+<%= form_with(model: twoseatersofa, local: true) do |form| %>
+  <% if twoseatersofa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(twoseatersofa.errors.count, "error") %> prohibited this twoseatersofa from being saved:</h2>
+
+      <ul>
+      <% twoseatersofa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :twoseatersofa_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :twoseatersofa_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :twoseatersofa_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

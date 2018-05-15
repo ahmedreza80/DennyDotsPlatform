@@ -1,0 +1,2 @@
+class Doubleb < ApplicationRecord
+end

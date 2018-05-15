@@ -1,0 +1,32 @@
+<%= form_with(model: kidsb, local: true) do |form| %>
+  <% if kidsb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kidsb.errors.count, "error") %> prohibited this kidsb from being saved:</h2>
+
+      <ul>
+      <% kidsb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :kidsb_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :kidsb_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :kidsb_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

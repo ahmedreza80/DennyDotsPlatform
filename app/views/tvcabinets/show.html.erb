@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tvcabinet.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tvcabinet.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @tvcabinet.price %>
+</p>
+
+<%= link_to 'Edit', edit_tvcabinet_path(@tvcabinet) %> |
+<%= link_to 'Back', tvcabinets_path %>

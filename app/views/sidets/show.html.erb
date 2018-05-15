@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @sidet.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sidet.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @sidet.price %>
+</p>
+
+<%= link_to 'Edit', edit_sidet_path(@sidet) %> |
+<%= link_to 'Back', sidets_path %>

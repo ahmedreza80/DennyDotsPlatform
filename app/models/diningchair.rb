@@ -1,0 +1,2 @@
+class Diningchair < ApplicationRecord
+end

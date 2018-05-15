@@ -1,0 +1,32 @@
+<%= form_with(model: sidet, local: true) do |form| %>
+  <% if sidet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sidet.errors.count, "error") %> prohibited this sidet from being saved:</h2>
+
+      <ul>
+      <% sidet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :sidet_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :sidet_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :sidet_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

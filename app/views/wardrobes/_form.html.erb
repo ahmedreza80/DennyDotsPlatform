@@ -1,0 +1,32 @@
+<%= form_with(model: wardrobe, local: true) do |form| %>
+  <% if wardrobe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wardrobe.errors.count, "error") %> prohibited this wardrobe from being saved:</h2>
+
+      <ul>
+      <% wardrobe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :wardrobe_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :wardrobe_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :wardrobe_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

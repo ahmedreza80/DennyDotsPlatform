@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @sofacumb.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sofacumb.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @sofacumb.price %>
+</p>
+
+<%= link_to 'Edit', edit_sofacumb_path(@sofacumb) %> |
+<%= link_to 'Back', sofacumbs_path %>

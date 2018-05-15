@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sofas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sofas.each do |sofa| %>
+      <tr>
+        <td><%= sofa.title %></td>
+        <td><%= sofa.description %></td>
+        <td><%= sofa.price %></td>
+        <td><%= link_to 'Show', sofa %></td>
+        <td><%= link_to 'Edit', edit_sofa_path(sofa) %></td>
+        <td><%= link_to 'Destroy', sofa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sofa', new_sofa_path %>

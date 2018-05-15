@@ -1,0 +1,32 @@
+<%= form_with(model: lshapedcornersofa, local: true) do |form| %>
+  <% if lshapedcornersofa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lshapedcornersofa.errors.count, "error") %> prohibited this lshapedcornersofa from being saved:</h2>
+
+      <ul>
+      <% lshapedcornersofa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :lshapedcornersofa_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :lshapedcornersofa_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :lshapedcornersofa_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

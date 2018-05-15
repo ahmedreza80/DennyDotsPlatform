@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @upholsteredb.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @upholsteredb.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @upholsteredb.price %>
+</p>
+
+<%= link_to 'Edit', edit_upholsteredb_path(@upholsteredb) %> |
+<%= link_to 'Back', upholsteredbs_path %>

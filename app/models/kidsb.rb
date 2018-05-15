@@ -1,0 +1,2 @@
+class Kidsb < ApplicationRecord
+end

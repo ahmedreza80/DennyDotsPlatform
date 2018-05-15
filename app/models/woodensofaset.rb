@@ -1,0 +1,2 @@
+class Woodensofaset < ApplicationRecord
+end

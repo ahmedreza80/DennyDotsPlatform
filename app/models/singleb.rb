@@ -1,0 +1,2 @@
+class Singleb < ApplicationRecord
+end

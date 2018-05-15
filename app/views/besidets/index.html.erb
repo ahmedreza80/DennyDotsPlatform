@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Besidets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @besidets.each do |besidet| %>
+      <tr>
+        <td><%= besidet.title %></td>
+        <td><%= besidet.description %></td>
+        <td><%= besidet.price %></td>
+        <td><%= link_to 'Show', besidet %></td>
+        <td><%= link_to 'Edit', edit_besidet_path(besidet) %></td>
+        <td><%= link_to 'Destroy', besidet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Besidet', new_besidet_path %>

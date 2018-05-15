@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @diningchair.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @diningchair.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @diningchair.price %>
+</p>
+
+<%= link_to 'Edit', edit_diningchair_path(@diningchair) %> |
+<%= link_to 'Back', diningchairs_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @sofa.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sofa.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @sofa.price %>
+</p>
+
+<%= link_to 'Edit', edit_sofa_path(@sofa) %> |
+<%= link_to 'Back', sofas_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bench.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bench.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @bench.price %>
+</p>
+
+<%= link_to 'Edit', edit_bench_path(@bench) %> |
+<%= link_to 'Back', benches_path %>

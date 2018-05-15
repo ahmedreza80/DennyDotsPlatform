@@ -1,0 +1,2 @@
+class Kitchencabinet < ApplicationRecord
+end

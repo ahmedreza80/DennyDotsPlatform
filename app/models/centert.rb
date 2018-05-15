@@ -1,0 +1,2 @@
+class Centert < ApplicationRecord
+end

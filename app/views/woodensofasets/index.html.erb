@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Woodensofasets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @woodensofasets.each do |woodensofaset| %>
+      <tr>
+        <td><%= woodensofaset.title %></td>
+        <td><%= woodensofaset.description %></td>
+        <td><%= woodensofaset.price %></td>
+        <td><%= link_to 'Show', woodensofaset %></td>
+        <td><%= link_to 'Edit', edit_woodensofaset_path(woodensofaset) %></td>
+        <td><%= link_to 'Destroy', woodensofaset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Woodensofaset', new_woodensofaset_path %>

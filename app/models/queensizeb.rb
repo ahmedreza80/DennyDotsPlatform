@@ -1,0 +1,2 @@
+class Queensizeb < ApplicationRecord
+end

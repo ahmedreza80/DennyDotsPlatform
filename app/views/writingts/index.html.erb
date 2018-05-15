@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Writingts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @writingts.each do |writingt| %>
+      <tr>
+        <td><%= writingt.title %></td>
+        <td><%= writingt.description %></td>
+        <td><%= writingt.price %></td>
+        <td><%= link_to 'Show', writingt %></td>
+        <td><%= link_to 'Edit', edit_writingt_path(writingt) %></td>
+        <td><%= link_to 'Destroy', writingt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Writingt', new_writingt_path %>

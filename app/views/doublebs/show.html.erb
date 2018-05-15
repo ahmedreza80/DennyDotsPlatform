@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @doubleb.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @doubleb.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @doubleb.price %>
+</p>
+
+<%= link_to 'Edit', edit_doubleb_path(@doubleb) %> |
+<%= link_to 'Back', doublebs_path %>

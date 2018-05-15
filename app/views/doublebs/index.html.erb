@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Doublebs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doublebs.each do |doubleb| %>
+      <tr>
+        <td><%= doubleb.title %></td>
+        <td><%= doubleb.description %></td>
+        <td><%= doubleb.price %></td>
+        <td><%= link_to 'Show', doubleb %></td>
+        <td><%= link_to 'Edit', edit_doubleb_path(doubleb) %></td>
+        <td><%= link_to 'Destroy', doubleb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doubleb', new_doubleb_path %>

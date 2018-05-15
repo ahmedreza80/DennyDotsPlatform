@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Kingsizebs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kingsizebs.each do |kingsizeb| %>
+      <tr>
+        <td><%= kingsizeb.title %></td>
+        <td><%= kingsizeb.description %></td>
+        <td><%= kingsizeb.price %></td>
+        <td><%= link_to 'Show', kingsizeb %></td>
+        <td><%= link_to 'Edit', edit_kingsizeb_path(kingsizeb) %></td>
+        <td><%= link_to 'Destroy', kingsizeb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kingsizeb', new_kingsizeb_path %>

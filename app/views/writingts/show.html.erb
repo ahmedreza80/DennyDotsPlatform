@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @writingt.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @writingt.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @writingt.price %>
+</p>
+
+<%= link_to 'Edit', edit_writingt_path(@writingt) %> |
+<%= link_to 'Back', writingts_path %>

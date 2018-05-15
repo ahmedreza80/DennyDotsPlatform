@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tvcabinets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tvcabinets.each do |tvcabinet| %>
+      <tr>
+        <td><%= tvcabinet.title %></td>
+        <td><%= tvcabinet.description %></td>
+        <td><%= tvcabinet.price %></td>
+        <td><%= link_to 'Show', tvcabinet %></td>
+        <td><%= link_to 'Edit', edit_tvcabinet_path(tvcabinet) %></td>
+        <td><%= link_to 'Destroy', tvcabinet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tvcabinet', new_tvcabinet_path %>

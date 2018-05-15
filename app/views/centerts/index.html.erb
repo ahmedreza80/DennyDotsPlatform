@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Centerts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @centerts.each do |centert| %>
+      <tr>
+        <td><%= centert.title %></td>
+        <td><%= centert.description %></td>
+        <td><%= centert.price %></td>
+        <td><%= link_to 'Show', centert %></td>
+        <td><%= link_to 'Edit', edit_centert_path(centert) %></td>
+        <td><%= link_to 'Destroy', centert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Centert', new_centert_path %>

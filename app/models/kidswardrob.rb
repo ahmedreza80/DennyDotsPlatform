@@ -1,0 +1,2 @@
+class Kidswardrob < ApplicationRecord
+end
