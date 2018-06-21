@@ -1,6 +1,6 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <<link rel="stylesheet" href="assets/twoseatersofas.scss">
+  <link rel="stylesheet" href="/assets/twoseatersofas.scss">
 </head>
 
 <body>
@@ -8,9 +8,8 @@
   <!-- Section Title -->
     <div class="container-fluid section-title ">
           <div class="container py-4">
-            <h3 class="text-center">Section Title</h3>
+            <h3 class="text-center"><%= @twoseatersofa.title %></h3>
             <hr class="title-border">
-            <p class="text-justify text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facilis omnis asperiores atque rerum quam. Alias voluptatem aspernatur voluptate nemo perspiciatis ullam cum in. Enim, inventore sunt qui corporis molestias.</p>
           </div>
     </div>
 
@@ -29,13 +28,13 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div data-image="1" class="carousel-item active">
-          <img class="d-block w-100" src="assets/bg-1.jpg" alt="First slide">
+          <img class="d-block w-100" src="<%= @twoseatersofa.previewo %>" alt="First slide">
         </div>
         <div data-image="2" class="carousel-item">
-          <img class="d-block w-100" src="assets/bg-2.jpg" alt="Second slide">
+          <img class="d-block w-100" src="<%= @twoseatersofa.previewt %>" alt="Second slide">
         </div>
         <div data-image="3" class="carousel-item">
-          <img class="d-block w-100" src="assets/bg-3.jpg" alt="Third slide">
+          <img class="d-block w-100" src="<%= @twoseatersofa.previewth %>" alt="Third slide">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -49,11 +48,11 @@
     </div>
     <div class="product-img">
       <input data-image="1" type="radio" id="1" name="product-img" value="1" checked>
-      <label for="1"><span><img src="assets/bg-1.jpg"  alt=""></span></label>
+      <label for="1"><span><img src="<%= @twoseatersofa.previewo %>"  alt=""></span></label>
       <input data-image="2" type="radio" id="2" name="product-img" value="2">
-      <label for="2"><span><img src="assets/bg-2.jpg"  alt=""></span></label>
+      <label for="2"><span><img src="<%= @twoseatersofa.previewt %>"  alt=""></span></label>
       <input data-image="3" type="radio" id="3" name="product-img" value="3">
-      <label for="3"><span><img src="assets/bg-3.jpg"  alt=""></span></label>
+      <label for="3"><span><img src="<%= @twoseatersofa.previewth %>"  alt=""></span></label>
     </div>
     </div>
     </div>
@@ -64,17 +63,18 @@
         <div class="col col-md-5 col-sm-12 py-2">
 
             <div class="price my-4">
-              <p class="h6">Our Price  Rs 6,631</p>
-              <p class="h2 text-warning">Offer Price Rs 5,242</p>
-
+              <p class="h5 text-warning">Our Price: Rs <%= @twoseatersofa.price %></p>
+              <% if @twoseatersofa.offerprice? %>
+              <p class="h3 text-warning">Offer Price Rs <%= @twoseatersofa.offerprice %></p>
+              
             </div>
             <hr>
             <div class="saving my-4">
               <div class="save">
-              <p class="text-center lead"><small>You Save Rs 3,850</small><span class="badge badge-warning ml-1">44% OFF</span></p>
+              <p class="text-center lead"><small>You Save Rs <%= @twoseatersofa.saving %></small><span class="badge badge-warning ml-1"><%= @twoseatersofa.off %>% OFF</span></p>
               </div>
-              <p class="text-center"><small>Rs 2,538 (Retail Discount) + Rs 1,312 (Limited Time Coupon)</small></p>
             </div>
+            <% end %>
             <hr>
             <div class="delivery my-4 d-flex justify-content-between">
               <p class="lead">Delivery</p>
@@ -87,14 +87,14 @@
             <div class="offers d-flex justify-content-between">
 
                 <div class="coupons-section ">
-                  <p class="h4 text-warning">Offer Rs 5,249</p>
-                  <p><small>After Using Coupon</small><span class="coupon-block">Zia123</span></p>
+                  <% if @twoseatersofa.offerprice? %>
+                  <p class="h4 text-warning">Offer Rs <%= @twoseatersofa.offerprice %>*</p>
+                  <p><small>*The Offer Price Is After Using Coupon</small><span class="coupon-block"><%= @twoseatersofa.coupon %></span></p>
                 </div>
+                <% else %>
+                <p><small>No coupon avaliable for <%= @twoseatersofa.title %></small></p>
+                <% end %>
                   <div class="vl"></div>
-                <div class="EMI-section">
-                  <p class="h4">EMI From</p>
-                  <p class=""><small>Rs 469<a href="#">EMI Details</a></small></p>
-                </div>
 
             </div>
             <hr>
@@ -201,7 +201,7 @@
 
                     <div class="d-none d-md-block col col-md-4">
 
-                    <img src="assets/bg-1.jpg" alt="" class="img-fluid" height="1000px">
+                    <img src="<%= @twoseatersofa.previewo %>" alt="" class="img-fluid" height="1000px">
                       <div class="tag-head py-4 mt-5">
                         <h3 class="lead text-warning">Design Your Furniture</h3>
                         <p class="lead">Share your design idea & our experts will get back with the best possible custom made suggestions</p>
@@ -243,37 +243,24 @@
       <h2 class="h3">Details</h2>
       <br>
       <div class="brand py-2">
-        <p class="lead d-inline">Brand:</p><p class="  d-inline tex-secondary"> Product Name</p>
-      </div>
-      <div class="Dimensions py-2">
-        <p class="lead d-inline">Dimensions:</p><p class=" text-center d-inline tex-secondary"> H 35.6 x W 38.2 x D 84.6; Seating Height - 14.2; Mattress Size : 36 x 78 (Not Included)
-  (all dimensions in inches)</p>
+        <p class="lead d-inline">Brand:</p><p class="  d-inline tex-secondary"> <%= @twoseatersofa.brand %></p>
       </div>
       <div class="colour py-2">
-        <p class="lead d-inline">Colour:</p><p class=" d-inline tex-secondary"> Wood Polish</p>
+        <p class="lead d-inline">Colour:</p><p class=" d-inline tex-secondary"> <%= @twoseatersofa.color %></p>
       </div>
       <div class="Warranty py-2">
-        <p class="lead d-inline">Warranty:</p><p class="   d-inline tex-secondary"> 36 Months' Warranty</p>
+        <p class="lead d-inline">Warranty:</p><p class="   d-inline tex-secondary"> <%= @twoseatersofa.warrenty %></p>
       </div>
       <div class="Room type py-2">
-        <p class="lead d-inline">Room Type:</p><p class="   d-inline tex-secondary"> Bedroom</p>
-      </div>  <div class="Height py-2">
-          <p class="lead d-inline">Height:</p><p class="   d-inline tex-secondary"> 36.0 inches</p>
-        </div>
-        <div class="width py-2">
-          <p class="lead d-inline">width:</p><p class="   d-inline tex-secondary"> 38.0 inches</p>
-        </div>
-        <div class="Depth py-2">
-            <p class="lead d-inline">Depth:</p><p class="   d-inline tex-secondary"> 85.0 inches</p>
-          </div>
+        <p class="lead d-inline">Material:</p><p class="   d-inline tex-secondary"> <%= @twoseatersofa.material %></p>
+      </div>
       </div>
 
 
 
     <div class="col col-md-4 col-sm-12">
         <h2 class="h3">Overview</h2>
-          <p class="text-justify"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis maiores, enim, et debitis molestiae nostrum laudantium totam nihil vitae eligendi soluta unde repellat alias esse. Error accusamus sint saepe quo reprehenderit sapiente, nulla vitae quidem maxime quod quam nam ducimus. <br><br>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem expedita asperiores, possimus consequatur unde. Tempore ab, alias cupiditate veritatis voluptatum ea deserunt, tenetur assumenda eligendi ullam! Esse facere autem nostrum, est, maiores natus magni qui eos provident, vero, dolores incidunt! </small></p>
+          <p class="text-justify"><small><%= @twoseatersofa.description %></small></p>
 
     </div>
       <!-- Question -->
@@ -338,259 +325,7 @@
 
           <div class="container-fluid bg-cover">
             <div class="container product-section-cover">
-              <!--- Row 1 --->
-              <div class="row">
-
-                <!--- COl 1 --->
-                <div class="col col-md-4 col-sm-6">
-                    <div class="product-grid">
-                      <div class="image">
-                        <a href="#">
-                          <img src="assets/bg-1.jpg" alt="" class="img-fluid">
-                          <span class="overlay">
-                              <span class="product-details">
-                                View Details
-                              </span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="product-discription py-3">
-                      <h4 class="text-center">Product Title</h4>
-                      <p class="text-center"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, explicabo..</small></p>
-                      <span class="product-price">
-                      <p class="text-center d-inline">Price: 24,500</p><i class="fa fa-heart d-inline" aria-hidden="true"></i>
-                      </span>
-                      </div>
-                      <div class="product-btn py-2 text-center">
-                      <a href="#" class="btn btn-lg btn-outline-secondary" role="button" aria-pressed="true">ADD TO CART</a>
-                      </div>
-                    </div>
-                </div>
-
-                <!--- COl 2 --->
-                <div class="col col-md-4 col-sm-6">
-                    <div class="product-grid">
-                      <div class="image">
-                        <a href="#">
-                          <img src="assets/bg-1.jpg" alt="" class="img-fluid">
-                          <span class="overlay">
-                              <span class="product-details">
-                                View Details
-                              </span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="product-discription py-3">
-                      <h4 class="text-center">Product Title</h4>
-                      <p class="text-center"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, explicabo..</small></p>
-                      <span class="product-price">
-                      <p class="text-center d-inline">Price: 24,500</p><i class="fa fa-heart d-inline" aria-hidden="true"></i>
-                      </span>
-                      </div>
-                      <div class="product-btn py-2 text-center">
-                      <a href="#" class="btn btn-lg btn-outline-secondary" role="button" aria-pressed="true">ADD TO CART</a>
-                      </div>
-                    </div>
-                </div>
-
-                <!--- COl 3 --->
-                <div class="col col-md-4 col-sm-6">
-                    <div class="product-grid">
-                      <div class="image">
-                        <a href="#">
-                          <img src="assets/bg-1.jpg" alt="" class="img-fluid">
-                          <span class="overlay">
-                              <span class="product-details">
-                                View Details
-                              </span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="product-discription py-3">
-                      <h4 class="text-center">Product Title</h4>
-                      <p class="text-center"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, explicabo..</small></p>
-                      <span class="product-price">
-                      <p class="text-center d-inline">Price: 24,500</p><i class="fa fa-heart d-inline" aria-hidden="true"></i>
-                      </span>
-                      </div>
-                      <div class="product-btn py-2 text-center">
-                      <a href="#" class="btn btn-lg btn-outline-secondary" role="button" aria-pressed="true">ADD TO CART</a>
-                      </div>
-                    </div>
-                </div>
-              </div>
-
-              <!--- Row 2 --->
-              <div class="row">
-
-                <!--- COl 1 --->
-                <div class="col col-md-4 col-sm-6">
-                    <div class="product-grid">
-                      <div class="image">
-                        <a href="#">
-                          <img src="assets/bg-1.jpg" alt="" class="img-fluid">
-                          <span class="overlay">
-                              <span class="product-details">
-                                View Details
-                              </span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="product-discription py-3">
-                      <h4 class="text-center">Product Title</h4>
-                      <p class="text-center"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, explicabo..</small></p>
-                      <span class="product-price">
-                      <p class="text-center d-inline">Price: 24,500</p><i class="fa fa-heart d-inline" aria-hidden="true"></i>
-                      </span>
-                      </div>
-                      <div class="product-btn py-2 text-center">
-                      <a href="#" class="btn btn-lg btn-outline-secondary" role="button" aria-pressed="true">ADD TO CART</a>
-                      </div>
-                    </div>
-                </div>
-
-                <!--- COl 2 --->
-                <div class="col col-md-4 col-sm-6">
-                    <div class="product-grid">
-                      <div class="image">
-                        <a href="#">
-                          <img src="assets/bg-1.jpg" alt="" class="img-fluid">
-                          <span class="overlay">
-                              <span class="product-details">
-                                View Details
-                              </span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="product-discription py-3">
-                      <h4 class="text-center">Product Title</h4>
-                      <p class="text-center"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, explicabo..</small></p>
-                      <span class="product-price">
-                      <p class="text-center d-inline">Price: 24,500</p><i class="fa fa-heart d-inline" aria-hidden="true"></i>
-                      </span>
-                      </div>
-                      <div class="product-btn py-2 text-center">
-                      <a href="#" class="btn btn-lg btn-outline-secondary" role="button" aria-pressed="true">ADD TO CART</a>
-                      </div>
-                    </div>
-                </div>
-
-                <!--- COl 3 --->
-                <div class="col col-md-4 col-sm-6">
-                    <div class="product-grid">
-                      <div class="image">
-                        <a href="#">
-                          <img src="assets/bg-1.jpg" alt="" class="img-fluid">
-                          <span class="overlay">
-                              <span class="product-details">
-                                View Details
-                              </span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="product-discription py-3">
-                      <h4 class="text-center">Product Title</h4>
-                      <p class="text-center"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, explicabo..</small></p>
-                      <span class="product-price">
-                      <p class="text-center d-inline">Price: 24,500</p><i class="fa fa-heart d-inline" aria-hidden="true"></i>
-                      </span>
-                      </div>
-                      <div class="product-btn py-2 text-center">
-                      <a href="#" class="btn btn-lg btn-outline-secondary" role="button" aria-pressed="true">ADD TO CART</a>
-                      </div>
-                    </div>
-                </div>
-              </div>
-
-              <!--- Row 3 --->
-              <div class="row">
-
-                <!--- COl 1 --->
-                <div class="col col-md-4 col-sm-6">
-                    <div class="product-grid">
-                      <div class="image">
-                        <a href="#">
-                          <img src="assets/bg-1.jpg" alt="" class="img-fluid">
-                          <span class="overlay">
-                              <span class="product-details">
-                                View Details
-                              </span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="product-discription py-3">
-                      <h4 class="text-center">Product Title</h4>
-                      <p class="text-center"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, explicabo..</small></p>
-                      <span class="product-price">
-                      <p class="text-center d-inline">Price: 24,500</p><i class="fa fa-heart d-inline" aria-hidden="true"></i>
-                      </span>
-                      </div>
-                      <div class="product-btn py-2 text-center">
-                      <a href="#" class="btn btn-lg btn-outline-secondary" role="button" aria-pressed="true">ADD TO CART</a>
-                      </div>
-                    </div>
-                </div>
-
-                <!--- COl 2 --->
-                <div class="col col-md-4 col-sm-6">
-                    <div class="product-grid">
-                      <div class="image">
-                        <a href="#">
-                          <img src="assets/bg-1.jpg" alt="" class="img-fluid">
-                          <span class="overlay">
-                              <span class="product-details">
-                                View Details
-                              </span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="product-discription py-3">
-                      <h4 class="text-center">Product Title</h4>
-                      <p class="text-center"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, explicabo..</small></p>
-                      <span class="product-price">
-                      <p class="text-center d-inline">Price: 24,500</p><i class="fa fa-heart d-inline" aria-hidden="true"></i>
-                      </span>
-                      </div>
-                      <div class="product-btn py-2 text-center">
-                      <a href="#" class="btn btn-lg btn-outline-secondary" role="button" aria-pressed="true">ADD TO CART</a>
-                      </div>
-                    </div>
-                </div>
-
-                <!--- COl 3 --->
-                <div class="col col-md-4 col-sm-6">
-                    <div class="product-grid">
-                      <div class="image">
-                        <a href="#">
-                          <img src="assets/bg-1.jpg" alt="" class="img-fluid">
-                          <span class="overlay">
-                              <span class="product-details">
-                                View Details
-                              </span>
-                          </span>
-                        </a>
-                      </div>
-                      <div class="product-discription py-3">
-                      <h4 class="text-center">Product Title</h4>
-                      <p class="text-center"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, explicabo..</small></p>
-                      <span class="product-price">
-                      <p class="text-center d-inline">Price: 24,500</p><i class="fa fa-heart d-inline" aria-hidden="true"></i>
-                      </span>
-                      </div>
-                      <div class="product-btn py-2 text-center">
-                      <a href="#" class="btn btn-lg btn-outline-secondary" role="button" aria-pressed="true">ADD TO CART</a>
-                      </div>
-                    </div>
-                </div>
-              </div>
-
-
-
-
-
-
-
-            </div>
+              <%= render partial: 'twoseatersofas/twoseatersofa_related' %>
           </div>
         </div>
   </div>
