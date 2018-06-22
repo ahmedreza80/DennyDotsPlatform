@@ -62,29 +62,29 @@
         <!--- Right Column -->
         <div class="col col-md-5 col-sm-12 py-2">
 
-            <div class="price my-4">
+            <div class="price my-2">
               <p class="h5 text-warning">Our Price: Rs <%= @lshapedcornersofa.price %></p>
               <% if @lshapedcornersofa.offerprice? %>
               <p class="h3 text-warning">Offer Price Rs <%= @lshapedcornersofa.offerprice %></p>
-              
+
             </div>
             <hr>
-            <div class="saving my-4">
+            <div class="saving my-2">
               <div class="save">
               <p class="text-center lead"><small>You Save Rs <%= @lshapedcornersofa.saving %></small><span class="badge badge-warning ml-1"><%= @lshapedcornersofa.off %>% OFF</span></p>
               </div>
             </div>
             <% end %>
             <hr>
-            <div class="delivery my-4 d-flex justify-content-between">
-              <p class="lead">Delivery</p>
+            <div class="delivery my-2 d-flex justify-content-between">
+              <p class="h5">Delivery</p>
               <div class="pincode">
               <input type="text" name="Enter Pincode" placeholder="  Pincode">
               <button type="submit" class="btn btn-outline-secondary">Submit</button>
               </div>
             </div>
             <hr>
-            <div class="offers d-flex justify-content-between">
+            <div class="offers d-flex justify-content-center">
 
                 <div class="coupons-section ">
                   <% if @lshapedcornersofa.offerprice? %>
@@ -94,17 +94,17 @@
                 <% else %>
                 <p><small>No coupon avaliable for <%= @lshapedcornersofa.title %></small></p>
                 <% end %>
-                  <div class="vl"></div>
+
 
             </div>
             <hr>
             <!--- btn cart customize -->
-            <div class="button my-4">
-              <button type="button" class="btn btn-lg btn-outline-secondary cart"><i class="d-inline fa fa-cart-arrow-down" aria-hidden="true"></i><p class="d-inline">Add To Cart</p></button>
-              <button type="button" class="btn btn-lg btn-secondary buy"><i class=" d-inline fa fa-arrow-right" aria-hidden="true"></i><p class="d-inline">Buy Now</p></button>
+            <div class="button my-2">
+              <button type="button" class="btn cart"><i class="d-inline fa fa-cart-arrow-down" aria-hidden="true"></i><p class="d-inline">Add To Cart</p></button>
+              <button type="button" class="btn buy"><i class=" d-inline fa fa-arrow-right" aria-hidden="true"></i><p class="d-inline">Buy Now</p></button>
 
 
-              <button type="button" class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#exampleModalCenter">Customize It</button>
+              <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-wrench d-inline" aria-hidden="true"></i><p class="d-inline">Customize It</p></button>
 
               <!-- Modal -->
       <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -239,27 +239,27 @@
   <div class="container py-4">
     <hr>
     <div class="row">
-    <div class="col col-md-4 col-sm-12">
-      <h2 class="h3">Details</h2>
+    <div class="col col-md-4 col-sm-12 vl">
+      <h2 class="h6">Details</h2>
       <br>
       <div class="brand py-2">
-        <p class="lead d-inline">Brand:</p><p class="  d-inline tex-secondary"> <%= @lshapedcornersofa.brand %></p>
+        <p class=" d-inline"><strong>Brand : </strong></p><p class="  d-inline tex-secondary"> <%= @lshapedcornersofa.brand %></p>
       </div>
       <div class="colour py-2">
-        <p class="lead d-inline">Colour:</p><p class=" d-inline tex-secondary"> <%= @lshapedcornersofa.color %></p>
+        <p class=" d-inline"><strong>Colour : </strong></p><p class=" d-inline tex-secondary"> <%= @lshapedcornersofa.color %></p>
       </div>
       <div class="Warranty py-2">
-        <p class="lead d-inline">Warranty:</p><p class="   d-inline tex-secondary"> <%= @lshapedcornersofa.warrenty %></p>
+        <p class=" d-inline"><strong>Warranty : </strong></p><p class="   d-inline tex-secondary"> <%= @lshapedcornersofa.warrenty %></p>
       </div>
       <div class="Room type py-2">
-        <p class="lead d-inline">Material:</p><p class="   d-inline tex-secondary"> <%= @lshapedcornersofa.material %></p>
+        <p class=" d-inline"><strong>Material : </strong></p><p class="   d-inline tex-secondary"> <%= @lshapedcornersofa.material %></p>
       </div>
       </div>
 
 
 
-    <div class="col col-md-4 col-sm-12">
-        <h2 class="h3">Overview</h2>
+    <div class="col col-md-4 col-sm-12 Overview vl">
+        <h2 class="h6">Overview</h2>
           <p class="text-justify"><small><%= @lshapedcornersofa.description %></small></p>
 
     </div>

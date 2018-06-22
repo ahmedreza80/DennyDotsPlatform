@@ -6,9 +6,7 @@
 
 /* --------- Living-section --------- */
 
-.section-title{
-  background-color: rgba(0,0,0,.1);
-}
+
 
 .title-border{
   width: 300px;
@@ -91,19 +89,12 @@
 
 /* --------- Product View Showcase --------- */
 
-.section-title{
-  background-color: rgba(0,0,0,.1);
-}
 
 .title-border{
   width: 300px;
   border: 2px solid #ccc;
 }
 
-
-/* .content-fluid{
-  position: relative;
-} */
 
 .left-sidebar{
   position: sticky;
@@ -131,7 +122,7 @@ border-radius: 5px;
 
 
 .saving{
-  line-height: 10px;
+  line-height: 0px;
 }
 
 .pincode input{
@@ -151,29 +142,16 @@ padding: 7px;
 .vl{
   width: 0;
   height: inherit;
-  border-left: 2px solid #ccc;
-}
-
-.EMI-section a{
-  text-align: none;
-  color: #ccc;
-  margin-left: 2px;
+  border-right: 2px solid #ccc;
 }
 
 
-.button .btn{
-  margin-bottom: 10px;
+.button button.btn{
+  margin-right: 5px;
+  background-color: #FF8C00;
 }
 
-.button .cart{
-  padding: 10px 35px;
-  margin-right: 15px;
-}
 
-.button .buy{
-  padding: 10px 38px;
-  margin-left: 15px;
-}
 
 button .fa{
   font-size: 24px;
@@ -182,6 +160,32 @@ button .fa{
 button p{
   margin-left: 10px;
 }
+
+.brand, .Dimensions, .colour, .Warranty, .Room, .Height, .width,
+.Depth{
+  margin-top: -5px;
+  margin-bottom: -5px;
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 20px;
+}
+
+.Overview p{
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 20px;
+}
+
+.card{
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+}
+
+.card .btn{
+  background-color: #ccc;
+  color: #000;
+}
+
 /* Related */
 
 .product-section-cover{
